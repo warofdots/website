@@ -47,6 +47,12 @@
   background: linear-gradient(-45deg, #ff0066, #00ffe7, #3b00ff, #ffa600);
   background-size: 400% 400%;
   animation: neonflow 20s ease infinite;
+
+#countdown {
+  font-size: 4em;
+  color: red;
+  margin-top: 20px;
+}
 }
 @keyframes neonflow {
   0% { background-position: 0% 50%; }
@@ -309,9 +315,36 @@ nav:hover {
     <div id="play" class="section white-section">
       <div class="container">
         <h1>Release: 1st August 2025. Available to download for free here:</h1>
-        <br>
-        <br>
-        <br>
+	<br>
+  	<h1><div id="countdown">Loading...</div></h1>
+
+  	<script>
+    		// Target date: August 1st, 2025 at 00:00:00
+    		const targetDate = new Date("2025-08-01T00:00:00");
+
+    		function updateCountdown() {
+      		const now = new Date();
+      		const diff = targetDate - now;
+
+      		if (diff <= 0) {
+        		document.getElementById("countdown").innerHTML = "It's August 1st, 2025!";
+        		clearInterval(timer);
+        		return;
+      		}
+
+      		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      		const minutes = Math.floor((diff / 1000 / 60) % 60);
+      		const seconds = Math.floor((diff / 1000) % 60);
+
+      		document.getElementById("countdown").innerHTML =
+        	`${days}d ${hours}h ${minutes}m ${seconds}s`;
+    		}
+
+    		updateCountdown(); // Initial display
+    		const timer = setInterval(updateCountdown, 1000); // Update every second
+  	</script>
+	<br>
         <img src="download.png" alt="Map" style="max-width: 100%; border-radius: 10px; box-shadow: none; opacity: 0.9;">
 
       </div>
