@@ -189,24 +189,33 @@ nav:hover {
   margin-right: auto;
 }
 
+.cta-button { background: linear-gradient(45deg, #ff0040, #7300ff); 
+	color: white; 
+	padding: 12px 28px; 
+	font-size: 32px; 
+	border-radius: 14px; 
+	text-decoration: none; 
+	margin-top: 20px; 
+	font-weight: bold; 
+	display: inline-block; 
+	box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+	transition: transform 0.2s ease; } 
 
-    .cta-button {
-      background: linear-gradient(45deg, #ff0040, #7300ff);
-      color: white;
-      padding: 12px 28px;
-      font-size: 20px;
-      border-radius: 14px;
-      text-decoration: none;
-      margin-top: 20px;
-      font-weight: bold;
-      display: inline-block;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-  
-    .cta-button:hover {
-      transform: scale(1.05);
-    }
+.cta-button:hover { transform: scale(1.05); } 
+.big-button { background: white; color: black; 
+	border: 16px solid black; 
+	padding: 20px 40px; 
+	font-size: 64px; 
+	cursor: pointer; 
+	border-radius: 24px; 
+	transition: background-color 0.3s, color 0.3s; 
+	text-decoration: none; 
+	margin-top: 0px; 
+	font-weight: bold; 
+	display: inline-block; 
+	box-shadow: 0 4px 15px rgba(0,0,0,0.3); } 
+.big-button:hover { transform: scale(1.05); }
+
   
     img {
       max-width: 100%;
@@ -314,7 +323,7 @@ nav:hover {
   </div>
     <div id="play" class="section white-section">
       <div class="container">
-        <h1>Release: 1st August 2025. Available to download for free here:</h1>
+        <h1>Release: 1st August 2025. Available to download for FREE here:</h1>
 	<br>
   	<h1><div id="countdown">Loading...</div></h1>
 
@@ -345,7 +354,8 @@ nav:hover {
     		const timer = setInterval(updateCountdown, 1000); // Update every second
   	</script>
 	<br>
-        <img src="download.png" alt="Map" style="max-width: 100%; border-radius: 10px; box-shadow: none; opacity: 0.9;">
+        <a href="https://buymeacoffee.com/pythonic_tea" target="_blank" class="big-button">BOOST development</a>
+
 
       </div>
     </div>
