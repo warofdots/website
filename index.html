@@ -1,311 +1,67 @@
 <html>
 
+    <head>
+        <meta charset="UTF-8">
 
+        <title>War of Dots</title>
+        <link rel="icon" href="TaPprofile" type="image/png" />
 
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+        <link href="indexstyle.css" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
+        <meta property="og:title" content="War of Dots">
+        <meta property="og:description" content="The official War of Dots website!">
+        <meta property="og:image" content="TaPprofile">
+        <meta property="og:url" content="https://warofdots.net">
+        <meta property="og:type" content="website">
+        <link rel="icon" href="TaPprofile.png" type="image/png">
 
-  <title>War of Dots</title>
-  <link rel="icon" href="https://warofdots.net/tea_and_python.png" type="image/png" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-
-  <style>
-
-
-
-
-.fade-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -0.5;
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
-}
-
-
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-  
-    body {
-
-  font-family: 'Comic Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  background: linear-gradient(-45deg, #ff0066, #00ffe7, #3b00ff, #ffa600);
-  background-size: 400% 400%;
-  animation: neonflow 20s ease infinite;
-
-#countdown {
-  font-size: 4em;
-  color: red;
-  margin-top: 20px;
-}
-}
-@keyframes neonflow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.background1,
-.background2 {
-  position: relative;
-  z-index: 0; /*this is essential or the entire background wont work*/
-}
-
-
-
-.fade-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center 0px;
-  transition: opacity 4s ease-in-out;
-  z-index: -1;
-  pointer-events: none;
-}
-
-
-
-  
-nav {
-  background: linear-gradient(to right, #0052cc, #3a3a3a);
-  padding: 15px 40px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease;
-}
-
-
-
-nav a {
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-  margin: 0 0px; /* spacing between */
-}
-
-
-nav a:hover {
-  color: #ffdd57;
-  transform: scale(1.1);
-}
-
-nav a.active {
-  color: #ff0066;
-}
-
-nav:hover {
-  background: linear-gradient(to right, #0040ff, #a8a8a8);
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column; /* for mobile ui*/
-    align-items: flex-start;
-  }
-  nav .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 30px;
-      position: relative;
-    }
-  
-    .section {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 20px 40px;
-      position: relative;
-    }
-  
-    .white-section {
-      background: #ffffff;
-      color: #000000;
-    }
-  
-
-
-    .yt-wrapper {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.yt-wrapper.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-.title {
-  font-size: 120px;
-  margin: 0;
-  padding-top: 40px;
-  color: rgba(0, 0, 0, 1);
-}
-  
-    .yt-embed {
-  width: 200%; /* this makes the video big */
-  max-width: 1920px; 
-  height: 1125px; 
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-button { background: linear-gradient(45deg, #ff0040, #7300ff); 
-	color: white; 
-	padding: 12px 28px; 
-	font-size: 32px; 
-	border-radius: 14px; 
-	text-decoration: none; 
-	margin-top: 20px; 
-	font-weight: bold; 
-	display: inline-block; 
-	box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-	transition: transform 0.2s ease; } 
-
-.cta-button:hover { transform: scale(1.05); } 
-.big-button { background: white; color: black; 
-	border: 16px solid black; 
-	padding: 20px 40px; 
-	font-size: 64px; 
-	cursor: pointer; 
-	border-radius: 24px; 
-	transition: background-color 0.3s, color 0.3s; 
-	text-decoration: none; 
-	margin-top: 0px; 
-	font-weight: bold; 
-	display: inline-block; 
-	box-shadow: 0 4px 15px rgba(0,0,0,0.3); } 
-.big-button:hover { transform: scale(1.05); }
-
-  
-    img {
-      max-width: 100%;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-  
-    ul {
-      text-align: left;
-      margin-top: 10px;
-      padding-left: 20px;
-      font-size: 18px;
-    }
-  
-    ul li {
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-  
-
-
-
-/*imp*/
-
-
-    #events h2,
-    #discord h2,
-    #info h2 {
-      background: linear-gradient(to right, #00ffd5, #ff006f);
-      -webkit-background-clip: text; /*please dont touch, its fine again!*/
-      -webkit-text-fill-color: transparent;
-    }
-  
-    #events ul li::before {
-      content: "⚔️ ";
-    }
-  
-    #slideshow {
-      width: 100%;
-      height: auto;
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-      border: 3px solid #ffffff22;
-    }
-  </style>
-  
-</head>
+    </head>
 
 
 
 
 
 
-<body>
-  <!-- below is the navigation bar at the top of screen | The functionality of this is scrolling the user on click-->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#info">Info</a>
-    <a href="#youtube">YouTube</a>
-    <a href="#play">Play</a>
-    <a href="#discord">Discord</a>
-    <a href=""></a>
-  </nav>
-
-  <div id="home" class="section background1">
-    <div class="container">
-      <h1 class="title">WAR OF DOTS</h1>
-    </div>
-  </div>
-  <div id="info" class="section white-section">
-      <div class="container">
-        <h2>What is War of Dots?</h2>
-        <p> War of Dots is a strategic multiplayer game where every move matters. Command your armies in real-time battles across dynamic maps: capture territory, control resources, and conquer your rivals.</p>
-
+    <body>
+    <!-- below is the navigation bar at the top of screen | The functionality of this is scrolling the user on click-->
+    <nav id="header">
         <ul>
-          <li><strong>1. Dominate the Map:</strong> Break enemy lines and take control of key cities. The more you own, the stronger you grow. </li>
-          <li><strong>2. Live Tactical Combat:</strong> Engage in live, high-stakes battles. Think fast, adapt faster. Your decisions in the heat of the moment determine whether you rise or fall.</li>
-          <li><strong>3. Master Resource Management:</strong> Stockpile resources or upgrade your troops. Outmaneuver your opponents not just with force, but with cunning strategy.</li>
-          <li><strong>4. Special Events:</strong> limited-time challenges and map-altering events will make your War of Dots experience truly interesting.</li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#youtube">YouTube</a></li>
+            <li><a href="#home"><img src="TaPprofile.png" alt="TaPs pfp"> </a></li>
+            <li><a href="#play">Play</a></li>
+            <li><a href="#discord">Discord</a></li>
+
         </ul>
-        <h3>Think you can rise above the chaos and outsmart the rest? The battle’s waiting.</h3>
+    </nav>
 
-
-        <!--no borders-->
-        <img src="blue.png" alt="Map" style="max-width: 100%; border-radius: 10px; box-shadow: none; opacity: 0.9;">
-        <img src="red.png" alt="Game Screenshot" style="max-width: 100%; border-radius: 10px; box-shadow: none; opacity: 0.9;">
-
-      </div>
+    <div id="home" class="section background1">
+        <div class="container">
+            <h1 class="title">WAR OF DOTS</h1>
+        </div>
     </div>
+
+    <div id="info" class="section white-section" background-color="transparent">
+      <div class="container">
+          <h2>What is War of Dots?</h2>
+          <p> War of Dots is a strategic multiplayer game where every move matters. Command your armies in real-time battles across dynamic maps: capture territory, control resources, and conquer your rivals.</p>
+
+          <ul>
+              <li><strong>1. Dominate the Map:</strong> Break enemy lines and take control of key cities. The more you own, the stronger you grow. </li>
+              <li><strong>2. Live Tactical Combat:</strong> Engage in live, high-stakes battles. Think fast, adapt faster. Your decisions in the heat of the moment determine whether you rise or fall.</li>
+              <li><strong>3. Master Resource Management:</strong> Stockpile resources or upgrade your troops. Outmaneuver your opponents not just with force, but with cunning strategy.</li>
+              <li><strong>4. Special Events:</strong> limited-time challenges and map-altering events will make your War of Dots experience truly interesting.</li>
+          </ul>
+          <h3>Think you can rise above the chaos and outsmart the rest? The battle’s waiting.</h3>
+
+
+          <!--no borders-->
+          <img src="blue.png" alt="Map" style="max-width: 14%; border-radius: 10px; box-shadow: none; opacity: 0.9;" class="dot">
+          <img src="red.png" alt="Game Screenshot" style="max-width: 14%; border-radius: 10px; box-shadow: none; opacity: 0.9;" class="dot">
+
+          </div>
+      </div>
   <div id="youtube" class="section background2">
     <div class="container">
       <div class="yt-wrapper">
@@ -322,42 +78,26 @@ nav:hover {
     </div>
   </div>
     <div id="play" class="section white-section">
-      <div class="container">
-        <h1>Release: 1st August 2025. Available to download for FREE here:</h1>
-	<br>
-  	<h1><div id="countdown">Loading...</div></h1>
-
-  	<script>
-    		// Target date: August 1st, 2025 at 00:00:00
-    		const targetDate = new Date("2025-08-01T00:00:00");
-
-    		function updateCountdown() {
-      		const now = new Date();
-      		const diff = targetDate - now;
-
-      		if (diff <= 0) {
-        		document.getElementById("countdown").innerHTML = "It's August 1st, 2025!";
-        		clearInterval(timer);
-        		return;
-      		}
-
-      		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      		const minutes = Math.floor((diff / 1000 / 60) % 60);
-      		const seconds = Math.floor((diff / 1000) % 60);
-
-      		document.getElementById("countdown").innerHTML =
-        	`${days}d ${hours}h ${minutes}m ${seconds}s`;
-    		}
-
-    		updateCountdown(); // Initial display
-    		const timer = setInterval(updateCountdown, 1000); // Update every second
-  	</script>
-	<br>
-        <a href="https://buymeacoffee.com/pythonic_tea" target="_blank" class="big-button">BOOST development</a>
+        <div class="container">
+            <h1>Release: 1st August 2025. Available to download for FREE here:</h1>
+            <br>
+            <h1>
+                <div id="countdown">
+                    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+                    <a href="https://logwork.com/countdown-65au" class="countdown-timer" data-style="columns" data-timezone="Europe/Dublin" data-textcolor="#000000" data-date="2025-08-01 00:00" data-digitscolor="#ff0000">Stay tuned!</a>
+                </div>
+            </h1>
 
 
-      </div>
+            <br>
+            <button class="donate" onclick="window.open('https://buymeacoffee.com/pythonic_tea', '_blank')">
+                <span>BOOST Development</span>
+            </button>
+
+
+
+
+        </div>
     </div>
   <div id="discord" class="section background2" style="padding: 60px 0;">
     <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
@@ -524,8 +264,8 @@ setInterval(swapCover, 10000);
     color: #f0f0f0;
     padding: 30px;
     font-family: Arial, sans-serif;
-    margin-top: 50px;
-
+    margin-top: 0;
+    padding-top: 0;
     padding: 30px 30px; 
     min-height: 100px; 
   }
@@ -559,8 +299,8 @@ setInterval(swapCover, 10000);
 </body>
 
 <footer>
-  <p>@TeaAndPython</p>
-  <p><strong>Website created by:</strong> TJdog19</p>
+  <p><strong>@TeaAndPython</strong></p>
+  <p>Website created with huge help from TJdog19 & CuriosAnt</p>
 </footer>
 
 </html>
